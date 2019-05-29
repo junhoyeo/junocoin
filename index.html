@@ -37,15 +37,21 @@
                 }
               }
               const ctx = document.getElementById('chart').getContext('2d');
+              var gradientStroke = ctx.createLinearGradient(0, 0, 0, 1000);
+              gradientStroke.addColorStop(0, '#fc6767');
+              gradientStroke.addColorStop(1, '#ec008c');
               let chart = new Chart(ctx, {
                 type: 'line',
-
                 data: {
                   labels: this.labels,
                   datasets: [{
                     label: 'JUNOCOIN',
-                    backgroundColor: 'rgb(255, 99, 132)',
-                    borderColor: 'rgb(255, 99, 132)',
+                    borderColor: gradientStroke,
+                    pointBorderColor: gradientStroke,
+                    pointBackgroundColor: gradientStroke,
+                    pointHoverBackgroundColor: gradientStroke,
+                    pointHoverBorderColor: gradientStroke,
+                    fill: false,
                     data: this.commits
                   }]
                 },
