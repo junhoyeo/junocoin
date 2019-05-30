@@ -3,10 +3,22 @@
     <script src="https://unpkg.com/vue"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <link href="./style.css" rel="stylesheet">
   </head>
   <body>
     <div id="app">
-      <canvas id="chart"></canvas>
+      <div class="content">
+        <h1>CHART</h1>
+        <div class="chart-wrap">
+          <div class="chart">
+            <canvas id="chart"></canvas>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <h1>STATUS</h1>
+        <p><strong>{{ streak }} days</strong> after dimigo entrance</p>
+      </div>
     </div>
   </body>
   <script src="./chart.js"></script>
@@ -19,6 +31,7 @@
       data () {
         return {
           now: new Date(),
+          streak: Math.ceil((new Date() - new Date('2019-03-04')) / 8.64e7),
           commits: [],
           labels: []
         }

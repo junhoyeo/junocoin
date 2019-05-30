@@ -17,6 +17,13 @@ function updateChart(labels, data) {
         backgroundColor: 'rgba(252, 103, 103, 0.5)',
         data: data
       }]
+    },
+    options: {
+      legend:{
+        display: false
+      },
+      responsive: true,
+      maintainAspectRatio: false
     }
   })
 }
